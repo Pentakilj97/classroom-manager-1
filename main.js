@@ -16,28 +16,43 @@ const classroom1 = new Classroom([student1, student2, student3, student4]);
 
 let students1 = classroom1.students;
 
+// function displayClassroom(students) {
+
+//     document.getElementById('student-list').innerHTML = '';
+
+//     for (let i = 0; i < students.length; i++) {
+//         const element = students[i];
+//         let studentList = document.getElementById('student-list');
+//         let newLi = document.createElement('li');
+//         const studentName = document.createTextNode(element.name + ' ' + element.surname);
+//         newLi.appendChild(studentName)
+//         const removeButton = document.createElement('button');
+//         const buttonText = document.createTextNode('Rimuovi');
+//         const br = document.createElement('br')
+//         removeButton.appendChild(buttonText);
+//         removeButton.addEventListener('click', (event) => removeStudent(element));
+//         studentList.appendChild(newLi);
+//         newLi.appendChild(br);
+//         newLi.appendChild(removeButton);
+//         studentList.appendChild(newLi);
+
+//     }
+// }
+
+
 function displayClassroom(students) {
 
-    document.getElementById('student-list').innerHTML = '';
+    const studentList = document.getElementById('student-list');
+    studentList.innerHTML = '';
 
     for (let i = 0; i < students.length; i++) {
         const element = students[i];
-        let studentList = document.getElementById('student-list');
-        let newLi = document.createElement('li');
-        const studentName = document.createTextNode(element.name + ' ' + element.surname);
-        newLi.appendChild(studentName)
-        const removeButton = document.createElement('button');
-        const buttonText = document.createTextNode('Rimuovi');
-        const br = document.createElement('br')
-        removeButton.appendChild(buttonText);
-        removeButton.addEventListener('click', (event) => removeStudent(element));
-        studentList.appendChild(newLi);
-        newLi.appendChild(br);
-        newLi.appendChild(removeButton);
-        studentList.appendChild(newLi);
+        studentList.innerHTML += `<li>${element.name} ${element.surname} <button onclick='removeStudent()'>Remove Student</button></li>`
 
     }
 }
+
+
 
 function shuffleTheClassroom() {
     shuffle(students1)
