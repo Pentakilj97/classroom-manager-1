@@ -11,8 +11,9 @@ const student1 = new Student('Simone', 'Maccarone', '20/05/2003');
 const student2 = new Student('Luis Alberto', 'Castro', '28/07/1993');
 const student3 = new Student('Davide', 'Consigliere', '29/09/1989');
 const student4 = new Student('Francesco', 'Badile', '05/09/1993');
+const student5 = new Student('Vlad', 'Pyatnytskyy', '02/10/1997')
 
-const classroom1 = new Classroom([student1, student2, student3, student4]);
+const classroom1 = new Classroom([student1, student2, student3, student4, student5]);
 
 let students1 = classroom1.students;
 
